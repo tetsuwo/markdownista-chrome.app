@@ -1,0 +1,132 @@
+html, body, h1 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+    overflow: hidden;
+    padding: 1em;
+    margin: 0;
+}
+
+a { color: #fff; text-decoration: none; }
+a:hover { color: #aaa; text-decoration: none; }
+
+header {
+    margin-bottom: 2em;
+}
+    header h1 {
+        font-size: 24px;
+    }
+
+section {
+    margin-bottom: 2em;
+}
+    section aside {
+        margin-bottom: 1em;
+    }
+    section article {
+        height: 300px;
+        overflow: auto;
+    }
+	section article a {
+	    display: block;
+	    padding: .3em;
+	    border-bottom: 1px solid #222;
+	}
+	section article a:hover {
+            color: #fff;
+            position: relative;
+            top: 1px;
+            background-color: #080;
+	}
+
+/* -- TEXTAREA -- */
+textarea {
+    width: 98.5%;
+    height: 10em;
+    border: 1px solid #111;
+    background-color: #222;
+    color: #fff;
+    box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
+}
+    textarea:hover {
+        background-color: #333;
+    }
+
+/* -- SCROLLBAR -- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 0;
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #000;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #000;
+}
+
+
+
+/* -- FUNCTION BUTTON [X-SMALL] -- */
+.function-xsmall-button,
+.function-xsmall-button:visited {
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #555;
+    border-left: 1px solid #333;
+    background-color: #666;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 .8em;
+    font-size: 10px;
+    height: 16px;
+    line-height: 16px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+    input.function-xsmall-button {
+        height: 18px;
+        line-height: 18px;
+    }
+    .function-xsmall-button:hover {
+        border-top: 1px solid #555;
+        border-right: 1px solid #555;
+        border-bottom: 1px solid #777;
+        border-left: 1px solid #555;
+        background-color: #888;
+        color: #fff;
+        text-decoration: none !important;
+    }
+    .function-xsmall-button:active {
+        border-top: 1px solid #333;
+        border-right: 1px solid #444;
+        border-bottom: 1px solid #444;
+        border-left: 1px solid #444;
+        background-color: #555;
+        color: #fff;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+        -ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+        -o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+        text-decoration: none !important;
+    }
