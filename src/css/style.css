@@ -52,6 +52,7 @@ textarea {
     margin: 0 auto;
     font-size: 130%;
     background-color: #000;
+    font-family: 'MS Gothic', monospace; /* |Inconsolata| */
     color: #d1d1d1;
     border: none;
     outline: none;
