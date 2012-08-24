@@ -38,8 +38,8 @@ header {
         }
     header:hover {
         background-color: #111;
-        border-bottom: 1px solid #000;
     }
+
 
 section {
     padding: 1em;
@@ -57,24 +57,30 @@ section {
 	    border-bottom: 1px solid #222;
 	}
 	section article a:hover {
-            color: #fff;
-            position: relative;
-            top: 1px;
-            background-color: #080;
+        color: #fff;
+        position: relative;
+        top: 1px;
+        background-color: #080;
 	}
 
+
 /* -- TEXTAREA -- */
-textarea {
+section .fixed-width {
     display: block;
     margin: 0 auto;
     font-size: 130%;
     background-color: #000;
-    font-family: 'MS Gothic', monospace; /* |Inconsolata| */
     color: #d1d1d1;
     border: none;
+    height: 300px;
+    overflow: auto;
+}
+#paper {
+    font-family: 'MS Gothic', monospace; /* |Inconsolata| */
     outline: none;
     resize: none;
 }
+
 
 /* -- SCROLLBAR -- */
 ::-webkit-scrollbar {
@@ -100,12 +106,11 @@ textarea {
 }
 
 
-
-/* -- FUNCTION BUTTON [X-SMALL] -- */
+/* -- FUNCTION BUTTON -- */
 .function-button,
 .function-button:visited {
     border: 0;
-    background-color: #111;
+    background-color: #000;
     text-align: center;
     font-weight: bold;
     color: #fff;
@@ -123,6 +128,5 @@ textarea {
         color: #fff;
         text-decoration: none;
     }
-
 
 

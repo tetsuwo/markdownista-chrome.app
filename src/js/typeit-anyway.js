@@ -1,5 +1,0 @@
-TypeItAnyway = {};
-
-(function(tia) {
-
-})(TypeItAnyway);
