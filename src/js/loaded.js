@@ -1,26 +1,22 @@
 (function($) {
 
-    var $paper = $('#paper, #preview');
-    $paper.width(window.innerWidth / 2);
-    $paper.height(window.innerHeight);
+    var $stage = $('.fixed-width');
+    $stage.width(window.innerWidth / 2);
+    $stage.height(window.innerHeight);
 
     $('body').show();
 
     $('.load').click(function() {
-//        var name = window.prompt('Input you are want to load the file name');
-//        console.log(name);
-//        var papers = JSON.parse(localStorage.getItem('papers'));
-//        var text = JSON.parse(papers[name]);
-//        $paper.val(text);
-
         hideAll();
-        $('#choicer ul').empty();
 
+        var $choicer = $('#choicer');
         var papers = JSON.parse(localStorage.getItem('papers'));
-        var $result = $('#choicer');
+        $choicer.find('ul').empty();
+
         $.each(papers, function(k) {
-            var $a = $('<a />', {
+            var $loadLink = $('<a />', {
                 text: k,
+                class: 'load',
                 click: function() {
                     var name = $(this).data('name');
                     console.log(name);
@@ -31,23 +27,46 @@
                     }
 
                     var papers = JSON.parse(localStorage.getItem('papers'));
-                    $('#paper').val(JSON.parse(papers[name])).data('name');
+                    $('#paper').val(JSON.parse(papers[name])).data('name', name);
 
                     hideAll();
-                    $('#paper').slideDown();
+                    $('#paper').slideDown().focus();
                 }
             }).data('name', k);
 
-            $result.append($('<li />').append($a));
+            var $deleteLink = $('<a />', {
+                text: '[Delete]',
+                class: 'delete',
+                click: function() {
+                    var name = $(this).data('name');
+                    console.log(name);
+
+                    if (!name) {
+                        alert('FAILED');
+                        return false;
+                    }
+
+                    deleteName(name);
+
+                    $('.load').click();
+                }
+            }).data('name', k);
+
+            $choicer.find('ul').append(
+                    $('<li />').append($loadLink).append($deleteLink));
         });
 
-        $('#choicer').slideDown();
+        $choicer.slideDown();
     });
 
     $('.save').click(function() {
         var currentName = $('#paper').data('name') || '';
-        var name = window.prompt('What is file name?', currentName);
-        console.log(name);
+        var name = $.trim(window.prompt('What is file name?', currentName));
+
+        if (!name) {
+            alert('Please input this file name');
+            return false;
+        }
 
         var papers = JSON.parse(localStorage.getItem('papers')) || {};
         papers[name] = JSON.stringify($('#paper').val());
