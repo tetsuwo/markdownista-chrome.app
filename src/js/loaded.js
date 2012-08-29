@@ -35,7 +35,7 @@
             }).data('name', k);
 
             var $deleteLink = $('<a />', {
-                text: '[Delete]',
+                text: 'Delete',
                 class: 'delete',
                 click: function() {
                     var name = $(this).data('name');
@@ -43,6 +43,10 @@
 
                     if (!name) {
                         alert('FAILED');
+                        return false;
+                    }
+
+                    if (!confirm('Do you really want to delete?')) {
                         return false;
                     }
 

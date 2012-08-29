@@ -4,7 +4,7 @@ html, body, h1 {
 }
 
 body {
-    background-color: #000;
+    background-color: #111;
     color: #fff;
     font-size: 14px;
     font-family: Arial, Verdana, sans-serif;
@@ -37,7 +37,7 @@ header {
             list-style: none;
         }
     header:hover {
-        background-color: #111;
+        background-color: #222;
     }
 
 
@@ -69,9 +69,9 @@ section .fixed-width {
     display: block;
     margin: 0 auto;
     font-size: 130%;
-    background-color: #000;
+    background-color: transparent;
+    border: 1px solid transparent;
     color: #d1d1d1;
-    border: none;
     height: 300px;
     overflow: auto;
 }
@@ -80,6 +80,24 @@ section .fixed-width {
     outline: none;
     resize: none;
 }
+    #paper:hover {
+    }
+
+    #choicer ul li a.delete {
+        margin-left: .5em;
+        padding: .125em .25em;
+        display: inline-block;
+        font-size: 50%;
+        border-radius: .5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+    }
+        #choicer ul li a.delete:hover {
+            background-color: #f00;
+            color: #fff;
+        }
+
 
 
 /* -- SCROLLBAR -- */
@@ -110,11 +128,12 @@ section .fixed-width {
 .function-button,
 .function-button:visited {
     border: 0;
-    background-color: #000;
+    background-color: #111;
     text-align: center;
     font-weight: bold;
     color: #fff;
     padding: .2em .5em;
+    margin: 0;
     font-size: 80%;
     display: inline-block;
 }
