@@ -6,6 +6,16 @@
 
     $('body').show();
 
+    $('.help').click(function() {
+        hideAll();
+        $('#helper').slideDown();
+    });
+
+    $('.type').click(function() {
+        hideAll();
+        $('#paper').slideDown();
+    });
+
     $('.load').click(function() {
         hideAll();
 
@@ -75,6 +85,8 @@
         var papers = JSON.parse(localStorage.getItem('papers')) || {};
         papers[name] = JSON.stringify($('#paper').val());
         localStorage.setItem('papers', JSON.stringify(papers));
+
+        $('#paper').data('name', name);
     });
 
     $('.preview').toggle(function() {
@@ -102,6 +114,14 @@
 
     shortcut.add('Ctrl+l',function() {
         $('.load').click();
+    });
+
+    shortcut.add('Ctrl+w',function() {
+        $('.type').click();
+    });
+
+    shortcut.add('Ctrl+h',function() {
+        $('.help').click();
     });
 
 })(jQuery);

@@ -2,6 +2,7 @@
 function hideAll() {
     $('#choicer').hide();
     $('#preview').hide();
+    $('#helper').hide();
     $('#paper').hide();
 }
 

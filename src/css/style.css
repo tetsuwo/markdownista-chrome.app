@@ -4,7 +4,7 @@ html, body, h1 {
 }
 
 body {
-    background-color: #111;
+    background-color: #131313;
     color: #fff;
     font-size: 14px;
     font-family: Arial, Verdana, sans-serif;
@@ -16,9 +16,13 @@ body {
 a { color: #fff; text-decoration: none; }
 a:hover { color: #aaa; text-decoration: none; }
 
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
 
 header {
     padding: 0;
+    background-color: #111;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .6);
 }
     header nav {
         padding: 0;
@@ -37,7 +41,13 @@ header {
             list-style: none;
         }
     header:hover {
-        background-color: #222;
+    }
+
+    header ul.global {
+        float: left;
+    }
+    header ul.submenu {
+        float: right;
     }
 
 
@@ -83,6 +93,7 @@ section .fixed-width {
     #paper:hover {
     }
 
+#choicer {}
     #choicer ul li a.delete {
         margin-left: .5em;
         padding: .125em .25em;
@@ -98,6 +109,16 @@ section .fixed-width {
             color: #fff;
         }
 
+#helper {}
+    #helper table {
+        border-spacing: 1px;
+    }
+    #helper table thead tr th {
+        padding: .25em;
+    }
+    #helper table tbody tr td {
+        padding: .5em;
+    }
 
 
 /* -- SCROLLBAR -- */
@@ -138,12 +159,12 @@ section .fixed-width {
     display: inline-block;
 }
     .function-button:hover {
-        background-color: #222;
+        background-color: #131313;
         color: #fff;
         text-decoration: none;
     }
     .function-button:active {
-        background-color: #111;
+        background-color: #000;
         color: #fff;
         text-decoration: none;
     }

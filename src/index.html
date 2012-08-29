@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Markdownista - TypeIt Anyway</title>
+        <title>Markdownista</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="./js/lib/jquery-1.8.0.min.js"></script>
@@ -12,18 +12,55 @@
     </head>
     <body style="display: none;">
         <header>
-            <nav>
-                <ul>
+            <nav class="clearfix">
+                <ul class="global">
+                    <li><input class="function-button type" type="button" value="TYPE" title="Ctrl + t"></li>
                     <li><input class="function-button load" type="button" value="LOAD" title="Ctrl + l"></li>
                     <li><input class="function-button save" type="button" value="SAVE" title="Ctrl + s"></li>
                     <li><input class="function-button preview" type="button" value="PREVIEW" title="Ctrl + ENTER"></li>
                 </ul>
+                <ul class="submenu">
+                    <li><input class="function-button help" type="button" value="HELP" title="Ctrl + h"></li>
+                    <li><a href="http://tetsuwo.tumblr.com" class="function-button" target="_blank">&copy; Tetsuwo OISHI</a></li>
+                </ul>
             </nav>
         </header>
-        <section>
+        <section class="clearfix">
             <textarea id="paper" class="fixed-width"></textarea>
             <div id="preview" class="fixed-width" style="display: none;"></div>
             <div id="choicer" class="fixed-width" style="display: none;"><ul></ul></div>
+            <div id="helper" class="fixed-width" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Function Name</th>
+                            <th>Keyboard Shortcut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Type</td>
+                            <td>Ctrl + w</td>
+                        </tr>
+                        <tr>
+                            <td>Load</td>
+                            <td>Ctrl + l</td>
+                        </tr>
+                        <tr>
+                            <td>Save</td>
+                            <td>Ctrl + s</td>
+                        </tr>
+                        <tr>
+                            <td>Preview/Back</td>
+                            <td>Ctrl + Enter</td>
+                        </tr>
+                        <tr>
+                            <td>Help</td>
+                            <td>Ctrl + h</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         <script src="./js/loaded.js"></script>
     </body>
