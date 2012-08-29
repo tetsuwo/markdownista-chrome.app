@@ -39,6 +39,7 @@ header {
         header ul li {
             display: inline-block;
             list-style: none;
+            cursor: pointer;
         }
     header:hover {
     }

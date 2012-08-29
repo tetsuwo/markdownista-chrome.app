@@ -13,7 +13,7 @@
 
     $('.type').click(function() {
         hideAll();
-        $('#paper').slideDown();
+        $('#paper').slideDown().focus();
     });
 
     $('.load').click(function() {
@@ -116,7 +116,7 @@
         $('.load').click();
     });
 
-    shortcut.add('Ctrl+w',function() {
+    shortcut.add('Ctrl+i',function() {
         $('.type').click();
     });
 
