@@ -1,3 +1,25 @@
+
+// Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-17392775-11']);
+_gaq.push(['_trackPageview']);
+(function(d) {
+    var ga = d.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})(document);
+
+// Tracking
+function _trace(category, action, label) {
+    try {
+        _gaq.push(['_trackEvent', category, action, label]);
+    } catch (e) {;}
+}
+
+
 (function($) {
 
     var $stage = $('.fixed-width');
