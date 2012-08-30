@@ -15,5 +15,6 @@
     "112": "images/128.png",
     "128": "images/128.png"
   },
-  "version": "0.0.4"
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "version": "0.0.4.1"
 }

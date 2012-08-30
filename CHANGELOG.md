@@ -2,6 +2,7 @@ CHANGE LOG:
 -----------
 - 0.0.4 (2012/08/30)
   - Added GA.
+  - Added Content Security Policy.
 - 0.0.3 (2012/08/30)
   - Added help page.
   - Improved UI.
