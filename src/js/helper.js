@@ -1,4 +1,11 @@
 
+// Tracking
+function _trace(category, action, label) {
+    try {
+        _gaq.push(['_trackEvent', category, action, label]);
+    } catch (e) {;}
+}
+
 function hideAll() {
     $('#choicer').hide();
     $('#preview').hide();

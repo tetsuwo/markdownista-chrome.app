@@ -1,5 +1,4 @@
 {
-  "manifest_version": 2,
   "name": "__MSG_app_name__",
   "description": "__MSG_app_description__",
   "default_locale": "en",
@@ -15,6 +14,8 @@
     "112": "images/128.png",
     "128": "images/128.png"
   },
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-  "version": "0.0.4.1"
+  "version": "0.0.5",
+  "manifest_version": 2,
+  "content_security_policy":
+    "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com; object-src 'self'"
 }

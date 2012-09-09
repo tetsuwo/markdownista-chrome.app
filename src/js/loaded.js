@@ -12,32 +12,81 @@ _gaq.push(['_trackPageview']);
     s.parentNode.insertBefore(ga, s);
 })(document);
 
-// Tracking
-function _trace(category, action, label) {
-    try {
-        _gaq.push(['_trackEvent', category, action, label]);
-    } catch (e) {;}
-}
+// Twitter
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+})(document, "script", "twitter-wjs");
 
+// Facebook
+/*
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/ja_JP/all.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'facebook-jssdk');
 
+window.fbAsyncInit = function() {
+    FB.init({
+        appId      : '279973812102399', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+    });
+};
+*/
+
+CHANGED = false;
+
+// loaded
 (function($) {
 
     var $stage = $('.fixed-width');
-    $stage.width(window.innerWidth / 2);
-    $stage.height(window.innerHeight);
+    $stage.width(window.innerWidth / 1.5);
+    $stage.height(window.innerHeight - 80);
 
+    // open
     $('body').show();
 
+    // change paper
+    $('#paper').keypress(function() {
+        CHANGED = true;
+    });
+
+    /**
+     * Share mode
+     */
+    $('.share').click(function() {
+        $('#sharer').show();
+    });
+
+    /**
+     * Help mode
+     */
     $('.help').click(function() {
         hideAll();
-        $('#helper').slideDown();
+        $('#helper').show();
     });
 
+    /**
+     * Type mode
+     */
     $('.type').click(function() {
         hideAll();
-        $('#paper').slideDown().focus();
+        $('#paper').show().focus();
     });
 
+    /**
+     * Load mode
+     */
     $('.load').click(function() {
         hideAll();
 
@@ -62,7 +111,8 @@ function _trace(category, action, label) {
                     $('#paper').val(JSON.parse(papers[name])).data('name', name);
 
                     hideAll();
-                    $('#paper').slideDown().focus();
+                    CHANGED = false;
+                    $('#paper').show().focus();
                 }
             }).data('name', k);
 
@@ -92,9 +142,12 @@ function _trace(category, action, label) {
                     $('<li />').append($loadLink).append($deleteLink));
         });
 
-        $choicer.slideDown();
+        $choicer.show();
     });
 
+    /**
+     * Save mode
+     */
     $('.save').click(function() {
         var currentName = $('#paper').data('name') || '';
         var name = $.trim(window.prompt('What is file name?', currentName));
@@ -108,40 +161,46 @@ function _trace(category, action, label) {
         papers[name] = JSON.stringify($('#paper').val());
         localStorage.setItem('papers', JSON.stringify(papers));
 
+        CHANGED = false;
         $('#paper').data('name', name);
     });
 
+    /**
+     * Preview mode
+     */
     $('.preview').toggle(function() {
         $(this).val('BACK');
         hideAll();
-        $('#preview').html(window.markdown.toHTML($('#paper').val())).slideDown();
+        $('#preview').html(window.markdown.toHTML($('#paper').val())).show();
     }, function() {
         $(this).val('PREVIEW');
         hideAll();
-        $('#paper').slideDown();
+        $('#paper').show();
         $('#preview').empty();
     });
 
+    /**
+     * onUnload
+     */
     $(window).bind('beforeunload', function() {
-        return 'データ消えちゃうよ！';
+        return CHANGED ? 'データ消えちゃうよ！' : null ;
     });
 
+    /**
+     * Shortcut command
+     */
     shortcut.add('Ctrl+Enter',function() {
         $('.preview').click();
     });
-
     shortcut.add('Ctrl+s',function() {
         $('.save').click();
     });
-
     shortcut.add('Ctrl+l',function() {
         $('.load').click();
     });
-
     shortcut.add('Ctrl+i',function() {
         $('.type').click();
     });
-
     shortcut.add('Ctrl+h',function() {
         $('.help').click();
     });

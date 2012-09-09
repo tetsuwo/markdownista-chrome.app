@@ -4,7 +4,8 @@ html, body, h1 {
 }
 
 body {
-    background-color: #131313;
+    /*background-color: #061024;*/
+    background-color: #040b20;
     color: #fff;
     font-size: 14px;
     font-family: Arial, Verdana, sans-serif;
@@ -21,7 +22,7 @@ a:hover { color: #aaa; text-decoration: none; }
 
 header {
     padding: 0;
-    background-color: #111;
+    background-color: #040b19;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .6);
 }
     header nav {
@@ -53,7 +54,7 @@ header {
 
 
 section {
-    padding: 1em;
+    /*padding: 1em;*/
 }
     section aside {
         margin-bottom: 1em;
@@ -78,13 +79,17 @@ section {
 /* -- TEXTAREA -- */
 section .fixed-width {
     display: block;
+    padding: 1em;
     margin: 0 auto;
     font-size: 130%;
-    background-color: transparent;
+    background-color: #050E21;
     border: 1px solid transparent;
     color: #d1d1d1;
     height: 300px;
     overflow: auto;
+    /*border-radius: 1em;*/
+    /*box-shadow: inset 0 0 1em rgba(0, 0, 0, .5);*/
+    box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
 #paper {
     font-family: 'MS Gothic', monospace; /* |Inconsolata| */
@@ -170,4 +175,24 @@ section .fixed-width {
         text-decoration: none;
     }
 
+
+#sharer {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 200px;
+    z-index: 1001;
+    padding: .5em;
+    background-color: #000;
+    border-radius: .5em;
+}
+    #sharer ul {
+        padding: 0;
+        margin: 0;
+    }
+        #sharer ul li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
 

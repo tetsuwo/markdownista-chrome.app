@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
     <head>
         <meta charset="UTF-8">
         <title>Markdownista</title>
@@ -11,6 +11,7 @@
         <script src="./js/helper.js"></script>
     </head>
     <body style="display: none;">
+        <div id="fb-root"></div>
         <header>
             <nav class="clearfix">
                 <ul class="global">
@@ -20,6 +21,7 @@
                     <li><input class="function-button preview" type="button" value="PREVIEW" title="Ctrl + ENTER"></li>
                 </ul>
                 <ul class="submenu">
+                    <li><input class="function-button share" type="button" value="SHARE"></li>
                     <li><input class="function-button help" type="button" value="HELP" title="Ctrl + h"></li>
                     <li><a href="http://tetsuwo.tumblr.com" class="function-button" target="_blank">&copy; Tetsuwo OISHI</a></li>
                 </ul>
@@ -29,6 +31,29 @@
             <textarea id="paper" class="fixed-width"></textarea>
             <div id="preview" class="fixed-width" style="display: none;"></div>
             <div id="choicer" class="fixed-width" style="display: none;"><ul></ul></div>
+            <div id="sharer" style="display: none;">
+                <ul>
+                    <li>
+                        <!-- twitter -->
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-url="https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" 
+                            data-text="Markdownista - Chrome Web Store" 
+                            data-via="markdownista " 
+                            data-related="tetsukamp" 
+                            data-hashtags="markdown">Tweet</a>
+                    </li>
+                    <li>
+                        <!-- facebook -->
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?locale=en_US&href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fkbaamlaoekkcaebldgfmoogffhjhdpha&type=button_count" style="width: 100px; height: 19px; border: 0;"></iframe>
+                        <fb:like href="https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" send="true" width="450" show_faces="true"></fb:like>
+                    </li>
+                    <li>
+                        <!-- hatena -->
+                        <a href="http://b.hatena.ne.jp/my/add.confirm?url=https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha"
+                            target="_blank"><img src="http://b.hatena.ne.jp/bc/bl/https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" alt="はてなブックマーク数"></a>
+                    </li>
+            </div>
             <div id="helper" class="fixed-width" style="display: none;">
                 <table>
                     <thead>
