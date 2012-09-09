@@ -155,7 +155,7 @@ section .fixed-width {
 .function-button,
 .function-button:visited {
     border: 0;
-    background-color: #111;
+    background-color: transparent;
     text-align: center;
     font-weight: bold;
     color: #fff;

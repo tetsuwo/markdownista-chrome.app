@@ -44,6 +44,14 @@ window.fbAsyncInit = function() {
 };
 */
 
+// Google+
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+
+
 CHANGED = false;
 
 // loaded
@@ -65,7 +73,15 @@ CHANGED = false;
      * Share mode
      */
     $('.share').click(function() {
-        $('#sharer').show();
+        var
+        $sharer = $('#sharer'),
+        opened = $sharer.data('open') || false;
+
+        if (opened) {
+            $sharer.hide().data('open', false);
+        } else {
+            $sharer.show().data('open', true);
+        }
     });
 
     /**
