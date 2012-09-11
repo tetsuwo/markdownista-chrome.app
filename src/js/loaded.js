@@ -24,8 +24,7 @@ _gaq.push(['_trackPageview']);
 })(document, "script", "twitter-wjs");
 
 // Facebook
-/*
-(function(d, s, id) {
+/*(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s);
@@ -41,8 +40,14 @@ window.fbAsyncInit = function() {
         cookie     : true, // enable cookies to allow the server to access the session
         xfbml      : true  // parse XFBML
     });
-};
-*/
+};*/
+
+// LinkedIn
+/*(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://platform.linkedin.com/in.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();*/
 
 // Google+
 (function() {
@@ -57,9 +62,8 @@ CHANGED = false;
 // loaded
 (function($) {
 
-    var $stage = $('.fixed-width');
-    $stage.width(window.innerWidth / 1.5);
-    $stage.height(window.innerHeight - 80);
+    // resize
+    $(window).resize(onResize).resize();
 
     // open
     $('body').show();

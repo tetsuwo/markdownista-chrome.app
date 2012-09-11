@@ -5,7 +5,7 @@ html, body, h1 {
 
 body {
     /*background-color: #061024;*/
-    background-color: #040b20;
+    background-color: #040b19;
     color: #fff;
     font-size: 14px;
     font-family: Arial, Verdana, sans-serif;
@@ -16,6 +16,8 @@ body {
 
 a { color: #fff; text-decoration: none; }
 a:hover { color: #aaa; text-decoration: none; }
+
+hr { border: 1px solid #030a16; }
 
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 
@@ -82,12 +84,12 @@ section .fixed-width {
     padding: 1em;
     margin: 0 auto;
     font-size: 130%;
-    background-color: #050E21;
+    background-color: #040b20;
     border: 1px solid transparent;
     color: #d1d1d1;
     height: 300px;
     overflow: auto;
-    /*border-radius: 1em;*/
+    border-radius: 0 0 .5em .5em;
     /*box-shadow: inset 0 0 1em rgba(0, 0, 0, .5);*/
     box-shadow: 0 0 1em rgba(0, 0, 0, .5);
 }
@@ -143,7 +145,7 @@ section .fixed-width {
 }
 ::-webkit-scrollbar-thumb:vertical {
     height: 50px;
-    background-color: #333;
+    background-color: #060d30;
 }
 ::-webkit-scrollbar-thumb:horizontal {
     width: 50px;
@@ -178,13 +180,13 @@ section .fixed-width {
 
 #sharer {
     position: absolute;
-    top: 30px;
-    right: 0;
-    width: 200px;
+    top: 18px;
+    right: 60px;
+    width: 120px;
     z-index: 1001;
     padding: .5em;
-    background-color: #000;
-    border-radius: .5em;
+    background-color: #030a18;
+    border-radius: 0 0 .5em .5em;
 }
     #sharer ul {
         padding: 0;
@@ -192,7 +194,7 @@ section .fixed-width {
     }
         #sharer ul li {
             padding: 0;
-            margin: 0;
+            margin: 0 0 5px 0;
             list-style: none;
         }
 

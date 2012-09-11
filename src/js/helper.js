@@ -19,3 +19,8 @@ function deleteName(name) {
     localStorage.setItem('papers', JSON.stringify(papers));
 }
 
+function onResize() {
+    var $stage = $('.fixed-width');
+    $stage.width(window.innerWidth / 1.5);
+    $stage.height(window.innerHeight - 80);
+}
