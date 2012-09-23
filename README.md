@@ -22,15 +22,10 @@ KEYBOARD SHORTCUT
 - CTRL+L Ç≈ÉTÉbÇ∆ì«Ç›çûÇ›
 
 
-CHANGE LOG
------------
-
-[Here](https://github.com/tetsuwo/markdownista-chrome.app/blob/master/CHANGELOG.md)
-
-
 ELSEWHERE
 ---------
 
+- [Change Log](https://github.com/tetsuwo/markdownista-chrome.app/blob/master/CHANGELOG.md)
 - [Bugs and Issues](https://github.com/tetsuwo/markdownista-chrome.app/issues)
   ... Report Bugs and Issues
 - [Twitter](https://twitter.com/markdownista)
