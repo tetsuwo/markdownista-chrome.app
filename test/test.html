@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Test Runner</title>
+        <link rel="stylesheet" href="lib/jasmine-1.2.0/jasmine.css" />
+        <script src="lib/jasmine-1.2.0/jasmine.js"></script>
+        <script src="lib/jasmine-1.2.0/jasmine-html.js"></script>
+        <script src="lib/jasmine-1.2.0/jasmine-console.js"></script>
+        <script src="spec/SpecHelper.js"></script>
+        <script src="jasmine-prepare.js"></script>
+
+        <!-- test target code... -->
+        <link rel="stylesheet" href="../src/css/reset.css">
+        <link rel="stylesheet" href="../src/css/style.css">
+        <script src="../src/js/lib/jquery-1.8.0.min.js"></script>
+        <script src="../src/js/lib/shortcut.js"></script>
+        <script src="../src/js/lib/markdown.js"></script>
+        <!--<script src="./js/lib/js-markdown-extra.js"></script>-->
+        <script src="../src/js/helper.js"></script>
+
+        <!-- below test code... -->
+        <script src="test-prepare.js"></script>
+        <script src="../src/js/trello-checker.js"></script>
+
+        <!-- below test code... -->
+        <script src="test.js"></script>
+    </head>
+    <body style="display: none;">
+        <div id="fb-root"></div>
+        <header>
+            <nav class="clearfix">
+                <ul class="global">
+                    <li><input class="function-button type" type="button" value="TYPE" title="Ctrl + t"></li>
+                    <li><input class="function-button load" type="button" value="LOAD" title="Ctrl + l"></li>
+                    <li><input class="function-button save" type="button" value="SAVE" title="Ctrl + s"></li>
+                    <li><input class="function-button preview" type="button" value="PREVIEW" title="Ctrl + ENTER"></li>
+                    <li><input class="function-button export-html" type="button" value="to HTML"></li>
+                </ul>
+                <ul class="submenu">
+                    <li><input class="function-button share" type="button" value="SHARE"></li>
+                    <li><input class="function-button help" type="button" value="HELP" title="Ctrl + h"></li>
+                    <li><a href="http://tetsuwo.tumblr.com" class="function-button" target="_blank">&copy; Tetsuwo OISHI</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="clearfix">
+            <textarea id="paper" class="fixed-width"></textarea>
+            <textarea id="export-html" class="fixed-width" readonly style="display: none;"></textarea>
+            <div id="preview" class="fixed-width" style="display: none;"></div>
+            <div id="choicer" class="fixed-width" style="display: none;"><ul></ul></div>
+            <div id="sharer" style="display: none;">
+                <ul>
+                    <li>
+                        <!-- twitter -->
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-url="https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" 
+                            data-text="Markdownista - Chrome Web Store" 
+                            data-via="markdownista " 
+                            data-related="tetsukamp" 
+                            data-hashtags="markdown">Tweet</a>
+                    </li>
+                    <li>
+                        <!-- facebook -->
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?locale=en_US&href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fkbaamlaoekkcaebldgfmoogffhjhdpha&type=button_count" style="width: 100px; height: 19px; border: 0;"></iframe>
+                    </li>
+                    <li>
+                        <!-- google+ -->
+                        <g:plusone href="https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" size="medium"></g:plusone>
+                    </li>
+                    <!-- linkedin 
+                    <li>
+                        <script type="IN/Share" data-url="https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" data-counter="right"></script>
+                    </li>-->
+                    <li>
+                        <!-- hatena -->
+                        <a href="http://b.hatena.ne.jp/my/add.confirm?url=https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha"
+                            target="_blank"><img src="http://b.hatena.ne.jp/bc/de/https://chrome.google.com/webstore/detail/kbaamlaoekkcaebldgfmoogffhjhdpha" 
+                            alt="はてなブックマーク数"></a>
+                    </li>
+            </div>
+            <div id="helper" class="fixed-width" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Function Name</th>
+                            <th>Keyboard Shortcut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Type</td>
+                            <td>CTRL + I</td>
+                        </tr>
+                        <tr>
+                            <td>Load</td>
+                            <td>CTRL + L</td>
+                        </tr>
+                        <tr>
+                            <td>Save</td>
+                            <td>CTRL + S</td>
+                        </tr>
+                        <tr>
+                            <td>Preview / Back</td>
+                            <td>CTRL + ENTER</td>
+                        </tr>
+                        <tr>
+                            <td>Help</td>
+                            <td>CTRL + H</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Documents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Official</td>
+                            <td><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball: Markdown Syntax Documentation</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <script src="./js/loaded.js"></script>
+    </body>
+</html>
