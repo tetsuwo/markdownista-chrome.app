@@ -97,14 +97,6 @@ CHANGED = false;
     });
 
     /**
-     * Type mode
-     */
-    $('.type').click(function() {
-        hideAll();
-        $('#paper').show().focus();
-    });
-
-    /**
      * Load mode
      */
     $('.load').click(function() {
@@ -191,12 +183,37 @@ CHANGED = false;
     $('.preview').toggle(function() {
         $(this).val('BACK');
         hideAll();
+        // markdown.js
         $('#preview').html(window.markdown.toHTML($('#paper').val())).show();
+        // js-markdown-extra.js
+        //var MarkdownParser = new MarkdownExtra_Parser();
+        //$('#preview').html(MarkdownParser.transform($('#paper').val())).show();
     }, function() {
         $(this).val('PREVIEW');
         hideAll();
         $('#paper').show();
         $('#preview').empty();
+    });
+
+    /**
+     * HTML Export mode
+     */
+    $('.export-html').off('click').on('click', function() {
+        hideAll();
+        $('#export-html').show().focus();
+        // markdown.js
+        $('#export-html').val(window.markdown.toHTML($('#paper').val())).show();
+        // js-markdown-extra.js
+        //var MarkdownParser = new MarkdownExtra_Parser();
+        //$('#preview').html(MarkdownParser.transform($('#paper').val())).show();
+    });
+
+    /**
+     * Type mode
+     */
+    $('.type').click(function() {
+        hideAll();
+        $('#paper').show().focus();
     });
 
     /**
@@ -224,5 +241,11 @@ CHANGED = false;
     shortcut.add('Ctrl+h',function() {
         $('.help').click();
     });
+    /*shortcut.add('Tab',function() {
+        setIndentToPaper();
+    });
+    shortcut.add('Shift+Tab',function() {
+        setUnindentToPaper();
+    });*/
 
 })(jQuery);
