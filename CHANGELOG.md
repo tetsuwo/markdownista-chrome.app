@@ -1,5 +1,11 @@
 CHANGE LOG:
 -----------
+- 0.0.6 (2013/01/08)
+  - Add test code
+  - Change icon
+  - Add export-function for HTML
+- 0.0.5 (2012/xx/xx)
+  - xxxxx
 - 0.0.4 (2012/08/30)
   - Added GA.
   - Added Content Security Policy.

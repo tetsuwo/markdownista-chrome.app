@@ -14,7 +14,7 @@
     "112": "images/icon_128.png",
     "128": "images/icon_128.png"
   },
-  "version": "0.0.5",
+  "version": "0.0.6",
   "manifest_version": 2,
   "content_security_policy":
     "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com; object-src 'self'"
