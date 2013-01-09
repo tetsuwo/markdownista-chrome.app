@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Markdownista</title>
+        <link rel="shortcut icon" type="image/png" href="images/icon_16.png">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="./js/lib/jquery-1.8.0.min.js"></script>
         <script src="./js/lib/shortcut.js"></script>
         <script src="./js/lib/markdown.js"></script>
+        <!--<script src="./js/lib/js-markdown-extra.js"></script>-->
         <script src="./js/helper.js"></script>
     </head>
     <body style="display: none;">
@@ -19,6 +21,7 @@
                     <li><input class="function-button load" type="button" value="LOAD" title="Ctrl + l"></li>
                     <li><input class="function-button save" type="button" value="SAVE" title="Ctrl + s"></li>
                     <li><input class="function-button preview" type="button" value="PREVIEW" title="Ctrl + ENTER"></li>
+                    <li><input class="function-button export-html" type="button" value="to HTML"></li>
                 </ul>
                 <ul class="submenu">
                     <li><input class="function-button share" type="button" value="SHARE"></li>
@@ -29,6 +32,7 @@
         </header>
         <section class="clearfix">
             <textarea id="paper" class="fixed-width"></textarea>
+            <textarea id="export-html" class="fixed-width" readonly style="display: none;"></textarea>
             <div id="preview" class="fixed-width" style="display: none;"></div>
             <div id="choicer" class="fixed-width" style="display: none;"><ul></ul></div>
             <div id="sharer" style="display: none;">
