@@ -1,5 +1,9 @@
 CHANGE LOG:
 -----------
+- 0.0.8 (2013/xx/xx) - planning
+  - Sync storage
+- 0.0.7 (2013/01/08)
+  - Improve User Interface
 - 0.0.6 (2013/01/08)
   - Add test code
   - Change icon

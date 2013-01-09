@@ -103,9 +103,19 @@ CHANGED = false;
         hideAll();
 
         var $choicer = $('#choicer');
-        var papers = JSON.parse(localStorage.getItem('papers'));
         $choicer.find('ul').empty();
 
+        var papers = JSON.parse(localStorage.getItem('papers'));
+        attachLoadData($choicer, papers);
+
+        //chrome.storage.sync.get('papers', function(papers) {
+        //    attachLoadData($choicer, papers);
+        //});
+
+        $choicer.show();
+    });
+
+    var attachLoadData = function($choicer, papers) {
         $.each(papers, function(k) {
             var $loadLink = $('<a />', {
                 text: k,
@@ -153,9 +163,7 @@ CHANGED = false;
             $choicer.find('ul').append(
                     $('<li />').append($loadLink).append($deleteLink));
         });
-
-        $choicer.show();
-    });
+    };
 
     /**
      * Save mode
@@ -172,6 +180,8 @@ CHANGED = false;
         var papers = JSON.parse(localStorage.getItem('papers')) || {};
         papers[name] = JSON.stringify($('#paper').val());
         localStorage.setItem('papers', JSON.stringify(papers));
+        //chrome.storage.sync.set({'papers': JSON.stringify(papers)});
+        //chrome.storage.sync.set({'papers': papers});
 
         CHANGED = false;
         $('#paper').data('name', name);

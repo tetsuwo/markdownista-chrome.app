@@ -102,6 +102,9 @@ section .fixed-width {
     }
 
 #choicer {}
+    #choicer ul li a.load {
+        cursor: pointer;
+    }
     #choicer ul li a.delete {
         margin-left: .5em;
         padding: .125em .25em;
